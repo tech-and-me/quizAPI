@@ -17,6 +17,10 @@ h2, h3 {
     
 }
 
+.level{
+    width: 90px;   
+}
+
 #start{
     height: 100vh;
 
@@ -27,5 +31,5 @@ h2, h3 {
 }
 
 .card-body{
-    background-color: rgb(116, 101, 139);
+    background-color: rgb(138, 116, 170);
 }

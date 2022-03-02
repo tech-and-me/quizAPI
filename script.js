@@ -1,10 +1,15 @@
 // Global Variable 
-const apiUrl = "https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple";
+let apiUrl = "https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple";
+let level = "";
 let questAnsArr = [];
 let randomOrderArr = [];
 
 //Fetch Api
-const fetchData = () => {
+const fetchData = (e) => {
+    e.style.backgroundColor = "black";
+    level = "&difficulty=" + e.textContent.toLowerCase();
+    apiUrl = "https://opentdb.com/api.php?amount=10&category=18" + level + "&type=multiple";
+    // console.log("level is : ", level);
     fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
