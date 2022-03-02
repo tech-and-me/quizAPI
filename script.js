@@ -46,7 +46,7 @@ const displayQuiz = (arr) => {
         // generate random order of li 
         generateRandomOrder();
         str += `
-        <ul class="list-group my-4">
+        <ul class="list-group my-4 fs-5">
             <div> Q${index+1} - ${element['question']}
                 <div class='d-flex flex-column'>
                     <li class="list-group-item order-${randomOrderArr[0]}" id="li_${index}_0">
