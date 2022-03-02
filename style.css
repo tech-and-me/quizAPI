@@ -21,6 +21,10 @@ h2, h3 {
     width: 90px;   
 }
 
+input{
+    width: 80px;
+}
+
 #start{
     height: 100vh;
 

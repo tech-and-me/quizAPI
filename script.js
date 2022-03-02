@@ -3,13 +3,17 @@ let apiUrl = "https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&
 let level = "";
 let questAnsArr = [];
 let randomOrderArr = [];
+let amount = "10";
 
 //Fetch Api
 const fetchData = (e) => {
     e.style.backgroundColor = "black";
+    amount = document.querySelector("input").value;
+    if (+amount < 10){
+        amount = 10;
+    } 
     level = "&difficulty=" + e.textContent.toLowerCase();
-    apiUrl = "https://opentdb.com/api.php?amount=10&category=18" + level + "&type=multiple";
-    // console.log("level is : ", level);
+    apiUrl = "https://opentdb.com/api.php?amount=" + amount + "&category=18" + level + "&type=multiple";
     fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
@@ -32,7 +36,6 @@ const generateRandomOrder = () => {
         } 
     }
 }
-
 
 // Function to display data of questions and answers**********************
 const displayQuiz = (arr) => {
