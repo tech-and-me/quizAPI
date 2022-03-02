@@ -41,14 +41,13 @@ const displayQuiz = (arr) => {
     let str = "";
     console.log(questAnsArr);
 
-   
     arr.forEach((element,index) => {
         // generate random order of li 
         generateRandomOrder();
         str += `
         <ul class="list-group my-4 fs-5">
-            <div> Q${index+1} - ${element['question']}
-                <div class='d-flex flex-column'>
+            <div > Q${index+1} - ${element['question']}
+                <div class='d-flex flex-column mt-2'>
                     <li class="list-group-item order-${randomOrderArr[0]}" id="li_${index}_0">
                         <input type="radio" name="radio${index}" id="radio_${index}_0" > 
                         ${element['correct_answer']}
@@ -75,9 +74,6 @@ const displayQuiz = (arr) => {
 
 }  // END OF DISPLAY QUIZ FUNCTION **********************
 
-// Function to highlight correct answer
-
-
 // FUNCTION HANDLE WHEN SUBMIT **********************
 const handleSubmit = () => {
     let score = 0;
@@ -90,17 +86,15 @@ const handleSubmit = () => {
         if (firstRadioElm.checked)
         {
             score++;
-            document.getElementById("score").innerText = `Your score is : ${score} `
         }  
-
 
         firstLiElm.style.backgroundColor = "cyan";
 
     });
 
-    console.log("Total sore is : " , score);
     btnSubmitElm.style.display = 'none';
-
+    document.getElementById("score").innerText = `SCORE : ${score} `
+    
 }
 // END OF FUNCTION HANDLE WHEN SUBMIT **********************
 
@@ -111,3 +105,5 @@ btnSubmitElm.addEventListener("click",handleSubmit);
 
 // invoke reload function when reload button clicked
 document.getElementById("btnReset").addEventListener("click",()=>window.location.reload());
+
+

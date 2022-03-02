@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Lobster&display=swap');
+
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Kanit', sans-serif;
 }
 
 hr{
@@ -11,13 +14,7 @@ hr{
 
 h2, h3 {
     text-transform: uppercase;
-}
-
-
-#welcome-wrapper{
-    margin-top: 40%!important;
-    transform: translateY(-50%);
-
+    
 }
 
 #start{
@@ -30,5 +27,5 @@ h2, h3 {
 }
 
 .card-body{
-    background-color: rgb(38, 18, 75);
+    background-color: rgb(116, 101, 139);
 }
