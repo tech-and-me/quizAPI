@@ -11,6 +11,8 @@ const fetchData = (e) => {
     amount = document.querySelector("input").value;
     if (+amount < 10){
         amount = 10;
+    }else if (+amount>50){
+        amount = 50;
     } 
     level = "&difficulty=" + e.textContent.toLowerCase();
     apiUrl = "https://opentdb.com/api.php?amount=" + amount + "&category=18" + level + "&type=multiple";

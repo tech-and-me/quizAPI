@@ -22,8 +22,8 @@
             <h3 class="py-4">WELCOME TO TECH QUIZ</h3>
             <p>By : Phary Phal</p>
             <hr>
-            <label for="numQ"  class="d-block pb-1"> Please enter number of questions in the box below <br> Note: If less than 10 entered, default 10 will be set.</label>
-            <input type="number" min="10" name="numQ" class="py-1 text-center text-dark bg-light btn-outline-secondary" > 
+            <label for="numQ"  class="d-block pb-1"> Please enter number of questions in the box below <br> Note: Minimum number of question is 10 and Maximum is 50.</label>
+            <input type="number" min="10" max="50" name="numQ" class="py-1 text-center text-dark bg-light btn-outline-secondary" > 
             <h5 class="card-title mt-2 fs-6 fst-italic fw-lighter py-3">Please choose your level to begin the quiz</h5>   
             <div>
               <a class="btn btn-light  btn-sm fs-6 mb-4 text-primary fw-bolder shadow-lg level" onclick = "fetchData(this)">EASY</a>
