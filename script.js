@@ -10,7 +10,7 @@ let categoryText = "General Knowledge"; //default value if user does not choose 
 
 //Fetch Api
 const fetchData = (e) => {
-    e.style.backgroundColor = "black";
+
     // get number of questions user has chosen
     amount = document.querySelector("input").value;
     if (+amount < 10){
@@ -18,10 +18,11 @@ const fetchData = (e) => {
     }else if (+amount>50){
         amount = 50;
     } 
-    
+
     // get value from select option 
     const selectForm = document.getElementById('select');
     category = selectForm.value;
+
     if (category!=="9"){
         categoryText = selectForm.options[selectForm.selectedIndex].text;
     }
@@ -29,20 +30,19 @@ const fetchData = (e) => {
     //Get level value from user clicked button
     level = e.textContent.toLowerCase();
 
-    document.querySelector("h6").innerText = "Category : " + categoryText
-  
+    
     apiUrl = "https://opentdb.com/api.php?amount=" + amount + "&category=" + category + "&difficulty=" + level + "&type=multiple";
-    console.log(apiUrl);
-
     fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
         questAnsArr = data.results;
         console.log(questAnsArr);
-        // questAnsArr.push(obj);
+        e.style.backgroundColor = "black";
+
+        
         displayQuiz(questAnsArr);
         return questAnsArr;
-    })
+        })
 }
 
 // function to pick random number
@@ -64,6 +64,9 @@ const displayQuiz = (arr) => {
 
     //display quiz section
     start.style.display = "none";
+    
+    //display type of questions
+    document.querySelector("h6").innerText = "Category : " + categoryText
 
     // build htmlElement for quiz to be displayed
     let str = "";
