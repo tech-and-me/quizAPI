@@ -25,6 +25,10 @@ input{
     width: 80px;
 }
 
+.form-select{
+    width: 280px;
+}
+
 #start{
     height: 100vh;
 
@@ -36,4 +40,11 @@ input{
 
 .card-body{
     background-color: rgb(138, 116, 170);
+}
+
+
+@media (max-width: 768px){
+    label{
+        font-size: 0.8rem;
+    }
 }

@@ -22,6 +22,19 @@
             <h3 class="py-4">WELCOME TO TECH QUIZ</h3>
             <p>By : Phary Phal</p>
             <hr>
+
+            <select class="form-select mx-auto my-4" id="select">
+              <option value="9" selected>--Please select question type--</option>
+              <option value="27">Animals</option> 
+              <option value="25">Art</option>
+              <option value="11">Entertainment: Film</option>       
+              <option value="12">Entertainment: Music</option>
+              <option value="9">General Knowledge</option>
+              <option value="18">Science: Computers</option>
+              <option value="19">Science: Mathematics</option>
+              <option value="17">Science & Nature</option>
+            </select>
+
             <label for="numQ"  class="d-block pb-1"> Please enter number of questions in the box below <br> Note: Minimum number of question is 10 and Maximum is 50.</label>
             <input type="number" min="10" max="50" name="numQ" class="py-1 text-center text-dark bg-light btn-outline-secondary" > 
             <h5 class="card-title mt-2 fs-6 fst-italic fw-lighter py-3">Please choose your level to begin the quiz</h5>   
@@ -40,7 +53,8 @@
     <!-- (B) QUIZ CONTAINER -->
     <div class="container text-light py-4" id="quizBlock" style="display: none">
       <div class="mb-5 text-center">
-        <h2>Test your knowledge</h2>
+        <h2 class="my-2">Test your knowledge</h2>
+        <h6 class="text-info"></h6>
         <hr>
         <!-- <div>Time remaining : 
           <meter max="60" min="0" low="20" value="60" high="35" optimum="45" id="time" style="vertical-align: middle;"></meter>
@@ -51,14 +65,15 @@
       <div id="quizWrap"></div>
 
       <div class="my-2 text-center">
+        <h4 class="my-4"><span id="score" class="text-light"></span></h4>
+        <hr>
         <button type="button" class="btn btn-primary mx-3 my-3" id="btnSubmit">
           Submit Quiz
         </button>
         <button type="button" class="btn btn-primary mx-3 my-3" id="btnReset">
           Reset Quiz
         </button>
-        <hr>
-        <h4 class="my-4"><span id="score" class="text-light"></span></h4>
+
       </div>
     </div>
 

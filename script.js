@@ -1,21 +1,39 @@
 // Global Variable 
-let apiUrl = "https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple";
-let level = "";
+// let apiUrl = "https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple";
+
 let questAnsArr = [];
 let randomOrderArr = [];
-let amount = "10";
+let level = "";  //user has to choose level,hence, no default value set here.
+let amount = "10"; //default value if user does not choose number of questions
+let category = "9"; // default value if user does not choose category
+let categoryText = "General Knowledge"; //default value if user does not choose category
 
 //Fetch Api
 const fetchData = (e) => {
     e.style.backgroundColor = "black";
+    // get number of questions user has chosen
     amount = document.querySelector("input").value;
     if (+amount < 10){
         amount = 10;
     }else if (+amount>50){
         amount = 50;
     } 
-    level = "&difficulty=" + e.textContent.toLowerCase();
-    apiUrl = "https://opentdb.com/api.php?amount=" + amount + "&category=18" + level + "&type=multiple";
+    
+    // get value from select option 
+    const selectForm = document.getElementById('select');
+    category = selectForm.value;
+    if (category!=="9"){
+        categoryText = selectForm.options[selectForm.selectedIndex].text;
+    }
+
+    //Get level value from user clicked button
+    level = e.textContent.toLowerCase();
+
+    document.querySelector("h6").innerText = "Category : " + categoryText
+  
+    apiUrl = "https://opentdb.com/api.php?amount=" + amount + "&category=" + category + "&difficulty=" + level + "&type=multiple";
+    console.log(apiUrl);
+
     fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
